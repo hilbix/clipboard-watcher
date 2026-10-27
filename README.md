@@ -35,3 +35,53 @@ receive "$prefix"
 xclip -selection clipboard -i <<<"file:/tmp/$prefix$name.tmp"
 ```
 
+--------------
+
+# Usage
+
+On the remote:
+
+- Download this as a .ZIP
+- Unpack it into some directory
+- Click `SendTo - Verknüpfung.lnk` to open Send-To folder
+- Copy `clipboard-base64.bat` there
+
+On your local computer:
+
+- Start `clipboard-watcher.ps1` in Powershell
+  - it opens a window with a button and a log called `Clipboard Watcher`
+  - There is another shell window open.  Either one closes the watcher.
+
+Now on the Remote:
+
+- Right click on a file
+- Chose `Send to` (it is often hidden, so you must expand the menu)
+- Send it to `clipboard-base64.bat`
+
+On your local computer in `Clipboard Watcher` you will see the transferred filename and the size.
+It has been converted such, that you can paste it normally anywhere.
+
+In explorer, in browsers, in WinSCP.  It just works.
+
+
+# Warnings
+
+- This is rough code.
+- It was written in a hurry.
+- It was vibe coded.
+- It is not polished.
+
+You can certainly find many improvements. 
+
+## But
+
+The first attempt used polling.  I hate polling.  Hence I let the AI improve it such, that it receives events.  Hence the window with the button.
+
+Feel free to improve:
+
+- Get rid of the black window
+- Put it into the tray
+- Add verification/signatures/whatever
+
+As it is AI coded with only minimal adaptations on my side, feel free to do with it whatever you want.
+(But: Pull requests are welcome.  However I probably have no time to help or do things.  Also, keep it small and tidy and free!)
